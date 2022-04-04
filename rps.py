@@ -66,11 +66,6 @@ def n_probability(player_samples: dict, counter: int, choices: str) -> float:
     variant = np.var(player_samples[choices], ddof=1)
     n_means = np.mean(player_samples[choices])
 
-    # print("choices : ", choices)
-    # print("variant : ", variant)
-    # print("n_means : ", n_means)
-    # print("===================")
-
     # calculate the probability of the player choice, by the formula of the normal distribution
     # https://en.wikipedia.org/wiki/Normal_distribution
     probability = abs(
@@ -105,7 +100,6 @@ while playing:
 
     # use the probability to make the computer choice after the samples are enough
     if number_of_game >= 10:
-        # print("player_samples : ", p1_samples)
         # probability of the player choose rock
         prob_r = n_probability(p1_samples, number_of_game, "r")
         # probability of the player choose paper
